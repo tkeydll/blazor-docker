@@ -1,0 +1,21 @@
+﻿@page "/hello"
+@rendermode InteractiveServer
+
+<PageTitle>Hello</PageTitle>
+
+<h1>挨拶Bot</h1>
+
+<input @bind="name" />
+<button class="btn btn-primary" @onclick="SayHello">送信</button>
+
+<p>@message</p>
+
+@code {
+    string name = string.Empty;
+    private string message = string.Empty;
+
+    private void SayHello()
+    {
+        message = $"こんにちは、{name} さん。";
+    }
+}
